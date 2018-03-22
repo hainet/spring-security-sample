@@ -6,9 +6,11 @@ import org.springframework.security.web.authentication.preauth.PreAuthenticatedA
 import org.springframework.stereotype.Component;
 
 @Component
-public class RequestHeaderAuthenticationProvider extends PreAuthenticatedAuthenticationProvider {
+public class RequestHeaderAuthenticationProvider
+        extends PreAuthenticatedAuthenticationProvider {
 
-    public RequestHeaderAuthenticationProvider(final RequestHeaderDetailsService service) {
+    public RequestHeaderAuthenticationProvider(
+            final RequestHeaderDetailsService service) {
         super.setPreAuthenticatedUserDetailsService(service);
         super.setUserDetailsChecker(new AccountStatusUserDetailsChecker());
     }

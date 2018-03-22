@@ -22,8 +22,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @RequiredArgsConstructor
     public static class ApiWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-        private final RequestHeaderAuthenticationProvider provider;
         private final RequestHeaderFilter filter;
+        private final RequestHeaderAuthenticationProvider provider;
 
         @Override
         public void configure(final HttpSecurity http) throws Exception {
