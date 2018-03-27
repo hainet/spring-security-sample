@@ -27,6 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         @Override
         public void configure(final HttpSecurity http) throws Exception {
+            // @formatter:off
             http
                     .mvcMatcher("/api/**")
                         .authorizeRequests()
@@ -35,6 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         .addFilter(filter)
                         .exceptionHandling()
                             .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED));
+            // @formatter:on
         }
 
         @Autowired
@@ -53,12 +55,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         @Override
         public void configure(final HttpSecurity http) throws Exception {
+            // @formatter:off
             http
                     .authorizeRequests()
                         .anyRequest().authenticated()
                         .and()
                     .formLogin()
                         .loginPage("/login").permitAll();
+            // @formatter:on
         }
 
         @Autowired
